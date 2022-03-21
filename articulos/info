@@ -1,0 +1,34 @@
+Comentarios y notas sobre los artículos que pueden ser útiles luego en el trabajo relacionado, introducción, etc.
+
+
+An efficient spark-based adaptive windowing for entity matching
+===============================================================
+
+    Este artículo, que citabas en el documento que preparabas para nuestra reunión, sí que es un "buen" artículo. (Frente a otros que habíamos utilizado anteriormente y que no tenían tanto nivel de calidad). Es una revista muy bien situada en el JCR (el ranking que se usa para evaluar la calidad de las mismas... con todos los fallos que puede tener el modelo de evaluación de calidad, pero es el que se usa).
+
+    Como ya has visto, el artículo es bastante reciente y podemos utilizarlo como un yardstick  con el que compararnos. Puedes ver que las primeras secciones tienen un trabajo muy exhaustivo de introducir el problema y compararlo con las soluciones en la bibliografía. Luego viene la parte de explicación de la idea original que proponen las autoras, que en este caso es una adaptación de
+
+        Draisbach, U., Naumann, F., Szott, S., Wonneberg, O., 2012. Adaptive windows for
+        duplicate detection. In: Proceedings of the 2012 IEEE 28th International Con-
+        ference on Data Engineering. IEEE Computer Society, Washington, DC, USA,
+        pp. 1073–1083. doi: 10.1109/ICDE.2012.20 . http://dx.doi.org/10.1109/ICDE.2012.
+
+    y, sobre todo lo que aporta el artículo son los detalles de la implementación en spark, viendo como resolver algunos problemas típicos como el skew en los datos.
+
+    Por último, de manera experimental, comparan su propuesta con alguna otra de la bibliografía. En palabras de los propios autores:
+
+        The solution provides an efficient paral-
+        lelization of the DCS ++ method ( Draisbach et al., 2012 ) by using
+        three Spark transformation steps, employing the broadcast vari-
+        ables Spark feature and applying a tailored data replication during
+        data redistribution to allow the resizing of the adaptive window.
+        The approach also addresses the data skewness problem with an
+        automatic mechanism of data partitioning that enables a satisfac-
+        tory load balancing across all available nodes. Our evaluation on a
+        cluster environment using real-world datasets demonstrated that
+        S-DCS ++ scales with the number of available nodes. We compared
+        our approach against two existing state of the art algorithms (i.e.,
+        S-SNM and MR-DCS ++ ) and verified that S-DCS ++ overcomes
+        S-SNM and MR-DCS ++ in terms of performance (execution time).
+
+    Como puedes ver, estamos haciendo una investigación muy similar pero, a la vez, con varias ideas que podrían profundizar más en el estudio del problema y de sus soluciones. Creo que podemos aportar una componente matemática de la que seguramente muchos autores en este campo de investigación carecen... El artículo del 2012 (añadido en artículos en el git) tiene alguna demostración matemática... tendríamos que mirarla, pero el del 2017 ninguna. 
