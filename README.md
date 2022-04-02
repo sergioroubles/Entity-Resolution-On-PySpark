@@ -10,23 +10,35 @@ This repository contains an integral development of an Entity Resolution algorit
 - The directory ***/resources*** contains a set of media resources used to explain the results of the project.
 
 ## Entity Resolution 
->The problem of duplicate detection in **large databases** is a vital process that appears in diverse and both academical and industry enviroments, its formal study being known as Entity Resolution. All throughout this project, framed in a research in collaboration with the Oftalmology department of the Hospital Clínico de Madrid, we will tackle the problem that involves the presence of numberous duplicates in a pacient database. To this aim, the problem will be thouroughly discussed, the theoretical underlying mathematical theory will be developped, and a particular solution to the problem will be presented and studied with the help of Spark. The analysis of the results will yield to several conclusions concerning the **optimal strategies to face the duplicate detection problem in structured databases in a scalable approach.**
+To see more about the Entity Resolution problem, check the following [link](https://www.sciencedirect.com/topics/computer-science/entity-resolution "link").
+
+## The algorithm
+# Core idea
+
+![plot](/resources/dia_pivote_final1.png)
+
+# Explanation
 
 1. This is an example on the original data base:
 
 ![plot](/resources/pivote1_listainicial.png)
 
-2. This is an example on what we want to achieve:
+The goal is to resolve the maximum number of duplicates, avoiding the quadratic cost of comparing the whole data base, and making the algorithm scalable at the same time. To do that, we use the method of *Pivote* or Pivoting, (check [a relative link](./Pivote.ipynb), which prioritises some fields over others in a sequential way. 
+
+
+2. This is an example on the pivoting method approach. It groups entities based on one preferred feel. As you can see in the image, it will suceeed at comparing every pair of matching entities, except for the ones that differ in the column you are pivoting over. Therefore, it will have to be applied twice to cover por all duplicates.
 
 ![plot](/resources/pivote2_bloques.png)
 
-The goal is to resolve the maximum number of duplicates, avoiding the quadratic cost of comparing the whole data base, and making the algorithm scalable at the same time. To do that, we use the method of *Pivote* or Pivoting, (check [a relative link](./Pivote.ipynb), which prioritises some fields over others in a sequential way. 
-
 3. The results of applying a two-fold pivoting on two different fields from the database are as follows:
 
-4. These is a graphic representation:
+![plot](/resources/tabladoble.png)
+
+4. These is a graphic representation that shows the importance of chosing the right approach:
+
+![plot](/resources/comparaciones.png)
 
 
 
-To see more about the Entity Resolution problem, check the following [link](https://www.sciencedirect.com/topics/computer-science/entity-resolution "link").
+
 
