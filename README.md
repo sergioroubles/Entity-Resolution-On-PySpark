@@ -3,7 +3,7 @@
 This repository contains an integral development of an Entity Resolution algorithm on PySpark. It is organised as follows:
 
 - The jupyter-notebook contains the main `code` of the algorithm, along with some displayed results and explainations.
-      - > WARNING: Original Data base and sensible displays have been removed from the project, as it contained a real set of names and personal information about the patients. This code is only for displaying purposes.
+> WARNING: Original Data base and sensible displays have been removed from the project, as it contained a real set of names and personal information about the patients. This code is only for displaying purposes.
 - The directory ***/articulos*** contains a certain amount of literature articles on which this project is based. Check for more information.
 - The directory ***/codigos*** contains 3 jupyter-notebooks, each of them exploring different aspects of the project
 - The directory ***/errores*** contains simple information about the amount and form of the duplicates found on the database.
